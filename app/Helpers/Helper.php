@@ -480,7 +480,6 @@ public static function SendProductSoldOutMail($order) {
             $user->first_name,
             $order->order_number,
             $product->product_name,
-            'https://2ndfusion.nyusoft.in/',
             url(Helper::_get_settings('logo')),
             self::get_settings('site_name'),
             $message,
@@ -489,16 +488,7 @@ public static function SendProductSoldOutMail($order) {
     );
 
     try {
-        $mail = new PHPMailer(true);
-        $mail->isSMTP();
-        $mail->Host       = self::_get_settings('smtp_host'); 
-        $mail->SMTPAuth   = true;
-        $mail->Username   = self::_get_settings('smtp_username');
-        $mail->Password   = "ADEK2027@@@";
-        // $mail->Host       = "smtp.gmail.com"; 
-        // $mail->SMTPAuth   = true;
-        // $mail->Username   = "aws5.nyusoft@gmail.com";
-        // $mail->Password   = "uokfxkdjepbfbods";
+        
 
 
          $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;        
